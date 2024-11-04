@@ -81,6 +81,11 @@ table(p.adjust(P,"BH")<0.01) #selecting genes by u3i
 FALSE  TRUE 
 27331   475 
 
+#retrieve gene IDs
+genes <- rownames(TABLE2)[p.adjust(P,"BH")<0.05]
+genes <- unlist(strsplit(genes,"|",fixed=T))
+genes <- genes[grep("uniprotkb",genes)]
+genes <- gsub("uniprotkb:","",genes)
 
 #For DIP data set
 #human PPI
@@ -170,4 +175,4 @@ table(p.adjust(P,"BH")<0.01)  #selecting genes by u6i
 FALSE  TRUE 
 5665    49 
 
-
+genes <- unlist(lapply(strsplit(Tn[p.adjust(P,"BH")<0.01],"|",fixed=T),"[",1)) #retrieve gene IDs
