@@ -1,7 +1,7 @@
 require(Matrix)
 require(irlba)
 
-#BIOGRID
+#For BIOGRID data set
 #human PPI
 #PPI for BIOGRID is supposed to be downloaded as suggested in the paper
 PPI_human <- read.delim("~/RESEARCH/PPI_tensor_2/BIOGRID/BIOGRID-ORGANISM-Homo_sapiens-4.4.236.tab3.txt.gz", header=FALSE, comment.char="#")
